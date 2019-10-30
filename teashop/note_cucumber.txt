@@ -1,0 +1,12 @@
+> pwd
+/Users/gracetzay/MyTeas/teashop
+> ./node_modules/.bin/cucumber-js features/ -r steps/
+
+You will see the results:
+(node:15534) DeprecationWarning: cucumber: defineSupportCode is deprecated. Please require/import the individual methods instead.
+......
+
+2 scenarios (2 passed)
+6 steps (6 passed)
+0m00.003s
+grace-mac:teashop gracetzay$ 
