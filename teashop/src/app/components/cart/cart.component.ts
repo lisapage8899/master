@@ -71,6 +71,36 @@ export class CartComponent implements OnInit {
 			this.total += item.product.price * item.quantity;
 		}
 	}
+	increase(id: string): void {
+        let cart: any = JSON.parse(localStorage.getItem('cart'));
+        let index: number = -1;
+        for (var i = 0; i < cart.length; i++) {
+            let item: Item = JSON.parse(cart[i]);
+            if (item.product.id == id) {
+                let item: Item = JSON.parse(cart[i]);
+                item.quantity += 1;
+                cart[i] = JSON.stringify(item);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                break;
+            }
+        }
+        this.loadCart();
+	}
+	decrease(id: string): void{
+        let cart: any = JSON.parse(localStorage.getItem('cart'));
+        let index: number = -1;
+        for (var i = 0; i < cart.length; i++) {
+            let item: Item = JSON.parse(cart[i]);
+            if (item.product.id == id) {
+                let item: Item = JSON.parse(cart[i]);
+                item.quantity -= 1;
+                cart[i] = JSON.stringify(item);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                break;
+            }
+        }
+        this.loadCart();
+    }
 
 	remove(id: string): void {
 		let cart: any = JSON.parse(localStorage.getItem('cart'));
@@ -83,6 +113,10 @@ export class CartComponent implements OnInit {
 			}
 		}
 		localStorage.setItem("cart", JSON.stringify(cart));
+		this.loadCart();
+	}
+	clear(): void {
+		localStorage.clear();
 		this.loadCart();
 	}
 

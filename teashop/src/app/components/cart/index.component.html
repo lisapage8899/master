@@ -11,15 +11,20 @@
     </tr>
     <tr *ngFor="let item of items">
         <td align="center">
-            <a (click)="remove(item.product.id)">X</a>
+            <a (click)="remove(item.product.id)">
+                <img src="/assets/remove_icon.jpg" width="20">
+            </a>
         </td>
         <td>{{item.product.id}}</td>
         <td>{{item.product.name}}</td>
         <td>
-            <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{item.product.photo}}" width="50">
+            <img src="/assets/{{item.product.photo}}" width="50">
         </td>
         <td>{{item.product.price}}</td>
-        <td>{{item.quantity}}</td>
+        <td>{{item.quantity}}
+            <button (click)="increase(item.product.id)"> + </button>
+            <button (click)="decrease(item.product.id)"> - </button>
+        </td>
         <td>{{item.product.price * item.quantity}}</td>
     </tr>
     <tr>
@@ -27,3 +32,4 @@
         <td>{{total}}</td>
     </tr>
 </table>
+<button (click)="clear()">clear cart</button>

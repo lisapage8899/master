@@ -12,8 +12,7 @@
         <td>{{product.name}}</td>
         <td>{{product.price}}</td>
         <td>
-            <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{product.photo}}" width="50">
-        </td>
+            <img src="/assets/{{product.photo}}" alt="image" width="100" height="100">
         <td>
             <a [routerLink]="['/cart', { id:product.id }]">Buy Now</a>
         </td>

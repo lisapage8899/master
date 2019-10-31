@@ -6,6 +6,7 @@ export class AppPage {
   }
 
   getTitleText() {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+    browser.sleep(5000)
+    return browser.getTitleText();
   }
 }
