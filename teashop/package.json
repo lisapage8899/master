@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~8.2.8",
     "@angular/router": "~8.2.8",
     "ejs": "^2.7.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mysql": "github:mysqljs/mysql",
     "mysql2": "^1.7.0",
     "request": "^2.88.0",
